@@ -6,6 +6,7 @@
   "typings": "dist/index",
   "scripts": {
     "build": "tsc",
+    "lint": "globstar --node --nodir -- tslint './src/**/*.ts'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/UrbanDoor/typed-fsa#readme",
   "devDependencies": {
+    "globstar": "^1.0.0",
+    "tslint": "^3.15.1",
     "typescript": "2.0.2"
   }
 }
