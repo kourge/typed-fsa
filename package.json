@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "globstar --node --nodir -- tslint './src/**/*.ts'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --opts config/mocha.opts"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,12 @@
   },
   "homepage": "https://github.com/UrbanDoor/typed-fsa#readme",
   "devDependencies": {
+    "@types/chai": "^3.4.32",
+    "@types/mocha": "^2.2.31",
+    "chai": "^3.5.0",
     "globstar": "^1.0.0",
+    "mocha": "^3.0.2",
+    "ts-node": "^1.3.0",
     "tslint": "^3.15.1",
     "typescript": "2.0.2"
   }
