@@ -1,0 +1,24 @@
+{
+  "name": "typed-fsa",
+  "version": "0.0.1",
+  "description": "A type-safe set of definitions and utilities for handling FSAs (Flux standard actions)",
+  "main": "dist/index.js",
+  "typings": "dist/index",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrbanDoor/typed-fsa.git"
+  },
+  "author": "Urbandoor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UrbanDoor/typed-fsa/issues"
+  },
+  "homepage": "https://github.com/UrbanDoor/typed-fsa#readme",
+  "devDependencies": {
+    "typescript": "2.0.2"
+  }
+}
