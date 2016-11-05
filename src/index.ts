@@ -26,8 +26,10 @@ export function isAction<Type extends AnyType, Payload>(
   action: any
 ): action is Action<Type, Payload> {
   return (
-    typeof action !== 'undefined' &&
-    typeof action.type !== 'undefined' &&
+    typeof action !== 'undefined' && (
+      typeof action.type === 'string' ||
+      typeof action.type === 'symbol'
+    ) &&
     Object.keys(action).every(isValidKey)
   );
 }
