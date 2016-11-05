@@ -154,4 +154,13 @@ export function counterReducer(state: number = 0, action: Actions.All): number {
 In this example, `Actions.All` cannot possibly have an action type string other
 than `'INCREMENT'`, `'DECREMENT'`, and `'ASSIGN'`. Furthermore, when `action.type`
 is known to match the value of `Actions.ASSIGN`, the type of `action.payload` is
-narrowed down to `number`.
+narrowed down to `number`. All of this works because:
+
+- Declaring a constant without specifying its type causes the literal type to be
+  inferred, e.g. `const a = 'A'` expands to `const a: 'A' = 'A'`
+- The type query `typeof NAME`, where `NAME` is a value, extracts the type out of
+  a value. Inheriting from the above example, `typeof a` is equivalent to `'A'`.
+- `type Name = Action<typeof NAME, PayloadType>` ties the type string to its
+  corresponding payload type, forming an action type.
+- `type All = Name1 | Name2 | Name3` forms a discriminated union out of multiple
+  action types, with the property `type` acting as the discriminant.
