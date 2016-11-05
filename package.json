@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "lint": "globstar --node --nodir -- tslint './src/**/*.ts'",
-    "test": "mocha --opts config/mocha.opts"
+    "test": "mocha --opts config/mocha.opts",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
